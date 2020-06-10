@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Splice</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="wrap">
+        <div id="main-A">
+            <div id="splice-container">
+                <canvas id="canvas" width="10" height="10"></canvas>
+            </div>
+            <button id="addimg">+</button>
+            <input type="file" id="file" accept="image/gif,image/jpeg,image/jpg,image/png" style="display:none;">
+        </div>
+        <div id="main-B">
+            <p class="subtitle">排列：</p>
+            <label>
+                <input type="radio" name="arrange" value="1" checked>
+                纵向排列
+            </label>
+            <label>
+                <input type="radio" name="arrange" value="2">
+                横向排列
+            </label>
+
+            <p class="subtitle">宽度：</p>
+            <label>
+                <input type="radio" name="width" value="1">
+                宽度对齐
+            </label>
+            <label>
+                <input type="radio" name="width" value="2" checked>
+                保持原宽
+            </label>
+            <br>
+            <button id="download-img">下载图片</button>
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
