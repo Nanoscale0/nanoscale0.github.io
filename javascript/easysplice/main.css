@@ -34,12 +34,38 @@ body {
 }
 
 #main-B{
-    padding: 10px;
+    width: 250px;
+    padding: 10px 20px;
     color: #FFF;
+}
+
+#main-B button{
+    border: 2px solid #FFF;
+    color: #FFF;
+    background: none;
+    font-size: 14px;
+    padding: 3px 10px;
+    transition: all 200ms;
+    cursor: pointer;
+    outline: none;
+}
+
+#main-B button:hover{
+    background: #FFF;
+    color: #3173b4;
+}
+
+#main-B button:active{
+    transform: scale(0.9);
+}
+
+.setting-item{
+    margin: 15px 0;
+    display: none;
 }
 
 .subtitle{
     font-weight: bold;
-    margin: 10px 0;
+    margin: 5px 0;
     font-size: 20px;
 }

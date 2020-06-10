@@ -7,6 +7,8 @@ var file = document.querySelector("#file")
 
 var lastBottom = 0;
 
+var bgcolor = "#FFF";
+
 $('#addimg').click(()=>{
     $("#file").click();
 })
@@ -24,6 +26,12 @@ $("#file").on('change', (event) => {
                 ctx.putImageData(imgData,0,0)
             }
             ctx.drawImage(imgObj,0,lastBottom);
+            if (canvas.width > 300){
+                $('#canvas').css('width', '300px')
+                $('#canvas').css('height', canvas.height * 300 / canvas.width)
+            }
+            
+
             imgData = ctx.getImageData(0,0,canvas.width,canvas.height);
             lastBottom += imgObj.height;
             imgObj = new Image();
@@ -35,7 +43,32 @@ $("#file").on('change', (event) => {
 })
 
 $('#download-img').click(()=>{
-    exportCanvasAsPNG('canvas','export');
+    let date = new Date();
+    // if (bgcolor !== "transparent"){
+    //     console.log(bgcolor)
+    //     imgData = ctx.getImageData(0,0,canvas.width,canvas.height);
+    //     ctx.clearRect(0,0,canvas.width,canvas.height); 
+
+    //     ctx.fillStyle = bgcolor;
+    //     ctx.fillRect(0,0,canvas.width,canvas.width);
+
+    //     ctx.globalCompositeOperation="destination-over";
+    //     ctx.putImageData(imgData,0,0);
+
+    //     // exportCanvasAsPNG('canvas','export-'+date.toLocaleDateString()+"-"+date.toLocaleTimeString());
+    //     // ctx.clearRect(0,0,canvas.width,canvas.height);
+    //     // ctx.putImageData(imgData,0,0);
+    // } else {
+        exportCanvasAsPNG('canvas','export-'+date.toLocaleDateString()+"-"+date.toLocaleTimeString());
+    // }
+})
+
+$('input[name="bgcolor"]').click(()=>{
+    if ($('input[name="bgcolor"]:checked').val() == 1){
+        bgcolor = "#FFF"
+    } else if ($('input[name="bgcolor"]:checked').val() == 2){
+        bgcolor = "transparent"
+    }
 })
 
 function exportCanvasAsPNG(id, fileName) {
