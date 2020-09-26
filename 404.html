@@ -12,7 +12,7 @@
     let l = window.location;
     if (l.pathname !== "/404.html") {
       l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/?jump=/' + l.pathname
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/?jump=' + l.pathname
       );
     }
   </script>
