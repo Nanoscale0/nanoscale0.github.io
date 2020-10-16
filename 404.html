@@ -11,7 +11,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
   </body>
   <script>
-    let l = window.location;
+    var l = window.location;
     if (l.pathname !== "/404.html") {
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/?jump=' + l.pathname
